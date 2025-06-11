@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 3px solid #646cff;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #646cff0d;
+    min-width: 300px;
+}
+
+textarea, 
+Input{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+textarea,
+Input::placeholder{
+    color: #ffffffc0;
+}
+
+Input:focus{
+    outline-color: #646cff;
+}
+
+Button{
+    margin: 10px auto;
+}
+
+div:has( > Button){
+    display: flex;
+    justify-content: space-around;
+}

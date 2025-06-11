@@ -1,33 +1,45 @@
+import './styles/App.css'
+import InputSection from './components/inputSection'
+import OutputSection from './components/outputSection'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // general
+  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [tel, setTel] = useState(null)
+
+  //education
+  const [school, setSchool] = useState('')
+  const [program, setProgram] = useState('')
+
+  //experience
+  const [compName, setCompName] = useState('')
+  const [position, setPosition] = useState('')
+  const [resp, setResp] = useState('')
+  const [startDate, setstartDate] = useState('')
+  const [endDate, setEndDate] = useState('')
+
+  const [descript, setDescript] = useState('')
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Generate Your CV in style</h1>
+      <div className="flex">
+        <InputSection 
+          name={name} setName={setName} lastName={lastName} setLastName={setLastName} email={email} setEmail={setEmail} 
+          tel={tel} setTel={setTel} school={school} setSchool={setSchool} program={program} setProgram={setProgram}
+          compName={compName} setCompName={setCompName} position={position} setPosition={setPosition}
+          resp={resp} setResp={setResp} startDate={startDate} setstartDate={setstartDate} endDate={endDate} setEndDate={setEndDate} descript={descript} setDescript={setDescript}
+
+        />
+        <OutputSection 
+          name={name} lastName={lastName} email={email} tel={tel} school={school} program={program} 
+          compName={compName} position={position} resp={resp} startDate={startDate} endDate={endDate} descript={descript}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
